@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+
+{# //^^ Les fichiers css #}
+    {% block stylesheets %}
+
+        <link rel="stylesheet" href="asset/css/main/slider.css">
+
+        <link rel="stylesheet" href="asset/css/main/vertical_1_slide.css">
+
+        <link rel="stylesheet" href="asset/css/main/ScrollTrigger.css">
+
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+{% block title %}Hi!{% endblock %}
+
+
+{# //&& Le corps de page #}
+    {% block body %}
+        
+            <section id="right"></section>     
+            <section id="down"></section>
+            <section id="up"></section>
+            <section id="left"></section>
+            <section id="left2"></section>
+
+        {% include "main/vertical_1_slide.html.twig" %}
+
+        {# {% include "main/slider_UnderMenu.html.twig" %} #}
+
+        {# {% include "main/ScrollTrigger.html.twig" %} #}
+
+
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+    
+{# //^^ Les fichiers js #}
+    {% block javascripts %}
+
+        <script src="asset/js/main/vertical_1_slide.js" defer></script>
+
+        <script src="asset/js/main/slider.js" defer></script>
+
+        <script src="asset/js/main/ScrollTrigger.js" defer></script>
+
+    {% endblock %}
+
+

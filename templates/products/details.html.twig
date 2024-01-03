@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Details de {{ categories.name }}{% endblock %}
+
+{% block body %}
+
+    <main class="container">
+        <section class="row">
+            
+            <div class="col-12">
+                {% for item in products %}
+                    <h1>{{ item.name }}</h1>
+                {% endfor %}
+                
+            </div>
+            <div class="col-6">
+
+            </div>
+            <div class="col-6">
+
+            </div>
+
+        </section>
+    </main>
+
+
+
+{% endblock %}
