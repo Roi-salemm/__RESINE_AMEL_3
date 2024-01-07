@@ -1,0 +1,161 @@
+{% extends 'base.html.twig' %}
+
+
+{# //^^ Les fichiers css #}
+    {% block stylesheets %}
+
+        <link rel="stylesheet" href="asset/css/boutique/product.css">
+
+
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+{% block title %}Hi!{% endblock %}
+
+
+{# //&& Le corps de page #}
+    {% block body %}
+        
+           
+        {# {% include "main/slider_UnderMenu.html.twig" %} #}
+
+        {% set imagetest = image1 %}
+
+        <section>
+            <div class="vitrine__menu">
+                <p class="vitrine__baseline">Offrez-vous un présent unique</p>
+            </div>
+
+            <div class="category_menu">
+
+                <a href="" class="category_menu__section_deco">
+                    <P class="category">Déco d'interieur</P>
+                    <li>       
+                        <img src='images/{{image1}}' 
+                        alt="Description de l'image" 
+                        width="100%" 
+                        height="auto" 
+                        class="invisibility">
+                        
+                    </li>
+                </a>
+
+                <a href="#" class="category_menu__section_animaux">
+                        <P class="category">Animaux</P>
+                    <li>
+                        <img src='images/{{image1}}' 
+                        alt="Description de l'image" 
+                        width="100%" 
+                        height="auto" 
+                        class="invisibility">
+                    </li>
+                </a>
+
+            </div>
+        </section>
+{# 
+        Les options de recherche d'articles  #}
+        <section>
+
+        
+            <form action="{{ path('boutique_recherche') }}" name="OptionClient" method="post">
+
+                <label for="categorie">Choisir une catégorie :</label>
+                <select name="categorie" id="categorie">
+
+                    <option value="">Toutes les catégories</option>
+                
+                    {% for categorie in categories %}
+                        <option value="{{ categorie.name }}">{{ categorie.name }}</option>
+                    {% endfor %}
+
+                </select>
+
+                <br><br>
+                
+                <label for="prix">Trier par prix :</label>
+                <select name="prix" id="prix">
+
+                    <option value="croissant">Prix croissant</option>
+                    <option value="decroissant">Prix décroissant</option>
+
+                </select>
+                <br><br>
+                
+                {# <label for="recherche">Recherche :</label>
+                <input type="text" name="recherche" id="recherche">
+                <br><br>
+                 #}
+                <input type="submit" value="Rechercher">
+            </form>
+
+
+        </section>
+
+
+
+
+
+
+
+        {#//^^ Affichage des articles #}
+
+        <section class="gallery__center">
+
+            <ul class="gallery">
+
+            
+                {% for product in products %}
+              
+                    <li class="profile__product">
+                        <a href="{{ absolute_url(path('app_main')) }}" class="none" value="">
+                            <img src='images/{{image1}}' alt="Article" class="profile-img">
+                            <ul class="profile__side">
+                                <img class="like_it" src='images/{{image1}}' alt=".">
+                            </ul> 
+                            <div class="profile__info">
+                                <div class="profile__color"></div>
+                                <p class="profile__name">{{ product.name }}</p>
+                                <p class="profile__price">{{ product.price }} $</p>
+                                <button class="profile__see">Jeter un oeil</button>
+                            </div>
+                        </a>
+                    </li>
+
+                {% endfor %}
+            </ul>
+
+
+        </section>
+
+
+
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+{# //^^ Les fichiers js #}
+    {% block javascripts %}
+
+        {# // <script src="asset/js/.js" defer></script> #}
+
+
+
+    {% endblock %}
+
+

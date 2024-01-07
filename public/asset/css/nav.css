@@ -228,3 +228,26 @@ header .navigation .navigation__items_mobil a:hover:before {
 
 
 
+/*& FOOTER  */
+
+
+
+.footer{
+    background-color: #1e5fc0;
+    height: 500px;
+    width: 100%;
+}
+
+.footer__bandeau{
+    background-color: #190dc2;
+    height: 40px;
+    width: 100%;
+
+    color: white;
+}
+
+
+
+
+
+

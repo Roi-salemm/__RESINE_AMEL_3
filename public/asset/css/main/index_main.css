@@ -1,0 +1,12 @@
+.index_main{
+    background-color: rgb(49, 49, 151);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.index_vitrine{
+    background-color: rgb(209, 166, 86);
+    width: 100%;
+    height: 100px;
+    position: absolute;
+}
